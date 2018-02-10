@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+	<!-- 
+	1.改变原数组的方法 push pop unshift shift sort reverse splice
+	2.不改变原数组的方法 concat join 
+	-->
+	</title>
+</head>
+<body>
+<script type="text/javascript">
+	//数组定义的方式：
+	// var array=[1,2,3]
+	// var array=new Array(1,2,3,4);
+	//var array=new Array(10); //定义一个数组 长度为10
+	
+	
+	//push方法的原理 
+	var arr=[1,2,3];
+	//数组的方法都是在原型链上写的
+	Array.prototype.push=function(){
+		for(var i=0;i<arguments.length;i++){ //push的个数
+			this[this.length]=arguments[i]
+		}
+		return this.length; //返回数组的长度
+	}
+</script>	
+</body>
+</html>

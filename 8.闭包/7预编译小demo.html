@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+global=100;
+function fn(){
+	console.log(global) //undefined 函数有自己的值就不用父级的值
+	global=200;
+	console.log(global) //200
+	var global=300
+}
+// Go：{
+// 	global:undefined
+// 	fn:function fn(){...}
+// }
+// 
+// Go：{
+// 	global:100
+// 	fn:function fn(){...}在函数体里面找函数声明，并把函数名作为AO的属性名 值为函数的函数体 （权重最高 ）
+// }
+//函数执行前还有AO的对象
+//AO：{
+// global:undefined //
+//}
+//AO：{
+// global:200
+//}
+	fn()
+// 结果：undefined
+// 
+
+
+</script>
+</body>
+</html>

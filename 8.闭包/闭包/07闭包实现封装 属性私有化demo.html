@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>私有化变量的应用</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function Deng(name,wife){
+		var prepareWife='xiaozhang'; //prepareWife  私有化变量 不让直接改
+		this.name=name;
+		this.wife=wife;
+		this.divorce=function(){
+			this.wife=prepareWife;
+		}
+		this.chagePrepareWife=function(target){
+			prepareWife=target;
+		}
+		this.sayPrepareWife=function(){
+			console.log(prepareWife)
+		}
+	}
+	var deng=new Deng('deng','xiaoliu')
+	console.log(deng.prepareWife)//undefined 
+	deng.sayPrepareWife()//xiaozhang 通过对象的方法才可以访问这个私有化变量
+	</script>
+
+	<script type="text/javascript">
+	function Person (name,age,sex) {
+		var a=0;
+		this.name=name;
+		this.age=age;
+		this.sex=sex;
+		function sss(){
+			a++;
+			document.write(a);
+		}
+		this.say=sss;
+	}
+	var oPerson=new Person();
+	oPerson.say();//1
+	oPerson.say();//2
+	var oPerson1=new Person()
+	oPerson1.say();//1
+	</script>
+</body>
+</html>

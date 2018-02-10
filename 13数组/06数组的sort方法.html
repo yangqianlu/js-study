@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+//sort()将数组按ASCII大小进行排序的
+var arr=[1,2,4,3,5,10];
+//arr.sort();
+//console.log(arr);//[1,10,2,3,4,5]
+
+// 1.必需写两个形参
+// 2.规则：看返回值 当返回值>0时 前面的数放在前面
+// 					当返回值<0时 后面的数放在前面
+// 					当返回值=0时 不动
+
+
+arr.sort(function(a,b){ //升序
+// if(a>b){ //a-b>0
+// 	return 1;
+// }
+// else{
+// 	return -1;
+// }
+
+//return a>b?1:-1
+
+return a-b;
+})
+
+arr.sort(function(a,b){ //降序
+// if(a<b){
+// 	return 1;
+// }
+// else{
+// 	return -1;
+// }
+
+return b-a;
+})
+</script>	
+</body>
+</html>

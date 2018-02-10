@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	function strLeng(str){
+		var num=0;
+		
+		for(var i=0;i<str.length;i++){
+			if(str.charCodeAt(i)<=255){//小于等于255是一个字节 
+				num++
+			}else{
+				num+=2
+			}
+			
+		}
+
+		console.log(num) 
+	}
+
+	strLeng('我是杨前露wwww+====')
+</script>
+</body>
+</html>

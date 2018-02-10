@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	var obj={
+		name:'yql',
+		age:20,
+		sex:'female',
+		height:160,
+		weight:100
+	}
+
+	//for in就是为了遍历对象的  是通过控制对象的key值来控制循环圈数
+	//for...in 语句用于遍历数组或者对象的属性（对数组或者对象的属性进行循环操作）。
+	//for (变量 in 对象){在此执行代码}
+	
+	
+	for( var key in obj){ //key会变成字符串类型
+		console.log(key) //name age sex height weight
+		console.log(typeof(key)) //string string string string string
+		console.log(obj[key])//必须这样获取对象的属性值 yql 20 female 160 100
+		console.log(obj.key)//obj.key ==>obj['key'] undefined undefined undefined undefined undefined
+	}
+	
+	console.log(obj.name) //yql
+</script>
+</body>
+</html>

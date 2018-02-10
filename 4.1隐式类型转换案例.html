@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		console.log(typeof(a)) //'undefined' 一般没定义的a会报错 但是当且仅当放在typeof()里面不会报错 并且返回undefined
+		console.log(typeof(undefined)) //string ==>'undefined' 
+		console.log(typeof(NaN)) //num
+		console.log(typeof(null)) //object
+		var a='123abc'
+		console.log(!a)//false 不懂
+		console.log(typeof(+a)) //number
+		console.log(typeof(-a)) //number
+		console.log(-a) //NaN
+		console.log(typeof(!!a)) //==>boolean
+
+		console.log(typeof(a+'')) //string
+		console.log(a+'')//'123abc'
+		console.log(1=='1') //true
+		console.log(NaN==NaN) //true==>false
+		console.log(NaN==undefined) //false
+		console.log('11'+11) //1111
+		console.log(1==='1') //false
+		console.log(parseInt('123abc')) //123
+		var num=123123.23422
+		console.log(num.toFixed(3)) //123123.234
+		console.log(typeof(typeof(a))) //string
+
+		console.log(null==undefined)//true 因为null不大于0不小于0不等于0 undefined也是不大于0不小于0不等于0 所以相等
+		console.log(null===undefined)//false
+		console.log({}=={})//false 两个房间 比的是地址
+		console.log([]==[])//false
+	</script>
+</body>
+</html>

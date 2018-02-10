@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 1.显示类型转换：
+	  Number() //将里面的类型转换成number类型并返回 其中undefined转换成NaN null转换成0 （转不成数字的统统返回NaN 比如 Number('a')，Number('123abc')都返回NaN） Number('-123')返回 -123
+
+	  parseInt() //函数可解析一个字符串，并返回一个整数，(不四舍五入 直接去掉小数点后面的。) parseInt(true) parseInt(false) parseInt(undefined) 都返回NaN
+
+	  parseFloat()
+	  toString() //undefined null不能用toString()方法 会报错
+	  String() //String(123)==>'123' 把扩号里面的转换成字符串
+	  Boolean() //把扩号里面的转换成布尔值 -->
+</body>
+<script type="text/javascript">
+	//Number(value)将变量的类型转换成数字类型
+	var bianliang='123';
+	var bianliang2=null; 
+	var bianliang3=undefined;//不能转换成数字的 转换的结果为NaN
+	var jieguo=Number(bianliang) 
+	var jieguo2=Number(bianliang2)
+	var jieguo3=Number(bianliang3)
+	console.log(typeof(jieguo) +':'+jieguo) //'number' 123
+	console.log(typeof(jieguo2) +':'+jieguo2) //'number' 0
+	console.log(typeof(jieguo3) +':'+jieguo3) //'number' NaN
+
+	//parseInt() 函数可解析一个字符串，并返回一个整数。
+	console.log(parseInt('123aaaa')) //123
+	//console.log(parseInt(123aaaa)) //报错
+
+	//String() 函数把对象的值转换为字符串。
+	//toString() 方法可把一个逻辑值转换为字符串，并返回结果。
+	var bianliang4=123456 //undefined和null不能用tostring()
+	var jieguo4=bianliang4.toString()
+	console.log(typeof(jieguo4) +':'+jieguo4)//'string' '123456'
+</script>
+</html>

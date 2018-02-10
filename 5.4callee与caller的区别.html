@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>arguments身上只有callee和lengths属性</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//callee [kɔ:'li:] 是arguments身上的属性 caller [ˈkɔ:lə(r)']不是 它是函数自己的属性
+	//1.
+	function test(){
+		demo()
+	}
+	function demo(){
+		console.log(demo.caller) //ƒ test(){demo()} caller返回一个函数的引用，这个函数调用了当前的函数;
+	}
+	test()
+	//2.
+	function test(){
+		demo()
+	}
+	function demo(){
+		console.log(demo.caller) //null  如果直接调用demo(即demo在任何函数中被调用，也就是顶层调用),返回null:
+	}
+	demo()
+
+
+	//callee的使用
+	//callee返回正在执行的函数本身的引用，它是arguments的一个属性
+	//它可以用来递归匿名函数。
+	//3
+	var a = function() {   
+	alert(arguments.callee);   
+	}   
+	var b = function() {   
+	a();   
+	}   
+	b();  //var a = function() {   alert(arguments.callee);   } 
+
+	//4
+	var num=(function(n){
+		if(n==1){
+			return 1;
+		}
+		console.log(arguments.callee)//打印出函数的引用
+		// 	ƒ (n){
+		// 	if(n==1){
+		// 		return 1;
+		// 	}
+		// 	console.log(arguments.callee)
+		// 	return n*arguments.callee(n-1);
+
+		// }
+		return n*arguments.callee(n-1);
+
+	}(100))
+	console.log(num)
+	</script>
+</body>
+</html>

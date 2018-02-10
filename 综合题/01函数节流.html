@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数节流：预先设定一个执行周期，当调用动作的时刻大于等于执行周期则执行该动作，然后进入下一个新周期</title>
+</head>
+<body>
+	<div id="show">0</div>
+	<button id="btn" >click</button>
+	<script type="text/javascript">
+	var oDiv=document.getElementById('show');
+	var oBtn=document.getElementById('btn');
+	var lastTime=0;	
+	oBtn.onclick=function () {
+			
+			var nowTime=new Date().getTime();
+			if(nowTime-lastTime>1000){
+
+				buy.apply(oDiv,arguments)
+				lastTime=nowTime;
+			}
+		
+	}
+	function buy(){
+		this.innerText=parseInt(this.innerText)+1;
+	}
+	//封装后
+	
+	var oDiv=document.getElementById('show');
+	var oBtn=document.getElementById('btn');
+	function throttle(handler,wait){
+	var lastTime=0;
+	return function(e){
+			var nowTime=new Date().getTime();
+			if(nowTime-lastTime>wait){
+				handler.apply(this,arguments)
+				lastTime=nowTime;
+			}
+		}
+	}	
+	function buy () {
+		
+		oDiv.innerText=parseInt(oDiv.innerText)+1;
+	}
+	oBtn.onclick=throttle(buy,1000);
+
+	</script>
+
+
+	
+
+</body>
+</html>

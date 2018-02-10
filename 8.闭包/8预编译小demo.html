@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+// Go：{
+// 	a:undefined
+// 	test:function test(){...}
+// 	c:234
+// }
+function test(){
+	console.log(b); //undefined
+	console.log(c) //123
+	if(a){ //因为a为undefined 所以不走
+		var b=100;
+	}
+	console.log(b) //undefined
+	c=234;//因为没有声明 所以是全局的 给window的属性
+	console.log(c) //234
+}
+var a;
+c=123
+// AO:{
+// 	b:undefined
+// }
+test();
+//test执行完后 a才等于10
+a=10;
+
+// Go：{
+// 	a:10
+// 	test:function test(){...}
+// 	c:234
+// }
+console.log(a) //10
+console.log(c) //234
+
+//结果为：
+//undefined
+//123
+//undefined
+//234
+//10
+//234
+
+
+
+</script>
+</body>
+</html>

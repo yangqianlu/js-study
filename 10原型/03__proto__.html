@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+ //    Person.prototype.name='sunny';
+	// function Person(){
+	//  // var this={
+	//  // 	__proto:Person.prototype
+	//  // }
+	// }
+	// var person=new Person()
+	// Person.prototype.name='Bob'
+	// console.log(person.name)//Bob
+
+	//1.
+	Person.prototype.name='sunny';
+	function Person(){
+	 // var this={
+	 // 	__proto:Person.prototype
+	 // }
+	}
+	var person=new Person()
+	Person.prototype={  //把原型改了 换了个新对象
+		name:'Bob'
+	}
+
+	//相当于：
+	// Person.prototype.name='sunny';
+	// __proto__=Person.prototype;
+	// Person.prototype={ 
+	// 	name:'Bob'
+	// }
+
+	console.log(person.name)//sunny
+	console.log(Person.prototype.name)//Bob
+
+
+	//2.
+	Person.prototype.name='sunny';
+	function Person(){
+	 // var this={
+	 // 	__proto:Person.prototype //有了new之后 才会有这个
+	 // }
+	}
+	
+	Person.prototype={  //所以这个会替换上面那个 
+		name:'Bob'
+	}
+	var person=new Person() 
+	console.log(person.name)//Bob
+	console.log(Person.prototype.name)//Bob
+
+
+
+	var obj={name:'yql'}
+	var obj1=obj;
+	obj.name='lisi'
+	console.log(obj1.name)//lisi
+
+	var obj={name:'yql'}
+	var obj1=obj;
+	obj={name:'zhangsan'}
+	console.log(obj1.name)//yql
+
+
+</script>	
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>this的指向</title>
+</head>
+<body>
+	<!-- 1.函数预编译过程this——>window
+	2.全局作用域里this——>window
+	3.call/apply可以改变函数运行时this的指向
+	4.obj.fun();fun()里面的this指向obj 谁调用this就指向谁 没人调用的话就走预编译过程 this指向window -->
+<script type="text/javascript">
+	var name='222';
+	var a={
+		name:'111',
+		say:function(){
+			console.log(this.name);
+		}
+	}
+	var fun=a.say;
+	// 等同于下面
+	// var fun=function(){
+	// 	console.log(this.name);
+	// }
+	fun();//222  没人调用的话就走预编译过程 this指向window
+	a.say() //111  谁调用this就指向谁 a.name=111
+	var b={
+		name:333,
+		say:function(fun){
+			fun() //222
+			// 相当于下面
+			// function(){
+			// console.log(this.name);
+			// }() 没人调用的话就走预编译过程 this指向window 
+			// 
+			test()
+		}
+	}
+	b.say(a.say);
+	b.say=a.say;
+	b.say(); //333
+
+
+	function test(){
+		console.log(this)
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//遍历对象 for(var prop in obj)
+	//1.判断属性是是原始值还是引用值（引用值要特殊拷贝） typeof() object
+	//2.如果是引用值 再判断是数组还是对象 instanceof toString constructor
+	//3.建立相应的数组或对象
+	//
+	//console.log(Object.prototype.toString.call([])) //'[object Array]'
+		var obj={
+			name:"abc",//原始值
+			age:17,
+			card:['visa','master'],//引用值
+			wife:{
+				name:"liu",
+				son:{
+					name:'aaa'
+				}
+			}
+
+		}
+		var obj1={}
+		function deepClone(origin,target){
+			var target=target || {},
+				toStr=Object.prototype.toString,
+				arrStr='[object Array]';
+			for(var prop in origin){
+				//hasOwnProperty()函数用于指示一个对象自身(不包括原型链)是否具有指定名称的属性。如果有，返回true，否则返回false。语法：object.hasOwnProperty( propertyName )
+				if(origin.hasOwnProperty(prop)){
+
+					if(origin[prop]!=='null' && typeof(origin[prop])=='object'){
+						// if(toStr.call(origin[prop])==arrStr){
+						// 	target[prop]=[];
+						// }else{
+						// 	target[prop]={};
+						// }
+						target[prop]=toStr.call(origin[prop])==arrStr?[]:{}
+
+					deepClone(origin[prop],target[prop])
+
+					}else{
+						target[prop]=origin[prop]
+					}
+				}
+			}
+
+			return target
+		}
+
+		deepClone(obj,obj1)
+		//obj再添加属性时 obj1不会改变
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数防抖：当调用动作过n毫秒后，才会执行该动作，若在这n毫秒内又调用此动作则将重新计算执行时间</title>
+</head>
+<body>
+	<input type="text" id="inp">
+	<script type="text/javascript">
+
+	// var oInp=document.getElementById('inp');
+	// function ajax(){
+	// 	console.log(this.value);
+	// }
+	// var timer=null;
+	// oInp.oninput=function(){
+	// 	var _self=this,
+	// 		_args=arguments;
+	// 	clearTimeout(timer);
+	// 	timer=setTimeout(function(){
+	// 		ajax.apply(_self,_args);
+	// 	}, 1000)
+	// }
+	// 
+	// 
+	// 封装之后
+	// 
+	var oInp=document.getElementById('inp');
+	function debounce(handler,wait){
+		var timer=null;
+		return function(){
+			var _self=this,
+				_args=arguments;
+			clearTimeout(timer);
+			timer=setTimeout(function(){
+				handler.apply(_self,_args)
+			}, wait)
+		}
+	}
+
+	function ajax(){
+		console.log(this.value);
+	}
+
+	oInp.oninput=debounce(ajax,2000)
+	</script>
+</body>
+</html>

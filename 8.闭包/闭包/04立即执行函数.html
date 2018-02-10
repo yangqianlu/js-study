@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	//立即执行函数
+	//（只会被执行一次）针对初始化功能的函数 执行完立即释放
+	
+	//(function(){}())w3c建议这种写法
+	//(function(){})()
+	
+	// (function(){
+	// 	var a=123;
+	// 	var b=234;
+	// 	console.log(a+b)
+	// })()
+	(function(){
+		var a=123;
+		var b=234;
+		console.log(a+b)
+	}())//立即执行 执行完就销毁了 与其他函数相比  只是只会被执行一次 执行完就被销毁
+
+	
+
+
+	var num=(function(a,b,c){
+		var d=a+b+c*4
+		return d
+	}(1,2,3))
+	console.log(num)
+
+	(function(a,b,c){
+		console.log(b)
+	}(1,2,3))
+</script>	
+</body>
+</html>

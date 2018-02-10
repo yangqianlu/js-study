@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>call改变了this的指向 借用别人的函数实现自己的功能</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+	function Person(name,age,sex){
+		this.name=name;
+		this.age=age;
+		this.sex=sex;
+	}
+
+	function Son(name,age,sex,grade,height){
+		// this.name=name;
+		// this.age=age;
+		// this.sex=sex;
+		Person.call(this,name,age,sex) //Person.call
+		this.grade=grade;
+		this.height=height;
+
+
+	}
+	var son=new Son('Mary',20,'male',100,165); 
+	console.log(son.name)
+	console.log(son.age)
+	console.log(son.sex)
+	console.log(son.grade)
+	console.log(son.height)
+	</script>
+</body>
+</html>

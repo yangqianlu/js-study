@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	//按照字符串的长度进行排序
+	// var arr=['aaa','bbb','dddddd','eeeeeee','aa','cccc','defrgrgrgggggg']
+
+	// arr.sort(function(a,b){
+	// 	if(a.length>b.length){
+	// 		return 1;
+	// 	}else{
+	// 		return -1;
+	// 	}
+	// })
+	// 
+	// 
+	// 按照字节长度进行排序
+	 var arr=['aaa杨前露','bb大美女','dddddd小妖精','小宇宙','我的时间很多a','cccc','defrgrgrgggggg']
+
+	 function returnBety(str){
+	 	var num=str.length;
+	 	for(var i=0;i<num;i++){
+	 		if(str.charCodeAt(i)>255){ //stringObject.charCodeAt(index)
+	 			num++
+	 		}
+	 	}
+	 	return num
+	 }
+
+	 arr.sort(function(a,b){
+	 	return returnBety(a)-returnBety(b)
+	 })
+</script>	
+</body>
+</html>

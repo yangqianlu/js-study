@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		function eater(){
+			var food='';//作为存储结构存在
+			var obj={
+				eat:function(){
+					console.log('i am eating'+food)
+					food=''
+				},
+				push:function(myFood){
+					food=myFood
+				}
+			}
+			return obj;
+		}
+		 var eater1=eater();
+		 eater1.push('banner')
+		 eater1.eat()
+	</script>
+</body>
+</html>

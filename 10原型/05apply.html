@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>apply</title>
+</head>
+<body>
+	<!-- apply与call的区别：
+	1.拼写不同
+	2.传参列表不同 apply需要传一个arguments  call需要把实参按照形参的个数传进去
+	apply与call相同：
+	1.都有相同作用 改变this的指向 
+	2.第一位都是写改变this指向的参数 -->
+
+	<script type="text/javascript">
+
+	function Person(name,age,sex){
+		this.name=name;
+		this.age=age;
+		this.sex=sex;
+	}
+
+	function Son(name,age,sex,grade,height){
+		// this.name=name;
+		// this.age=age;
+		// this.sex=sex;
+		Person.apply(this,[name,age,sex]) //Person.call
+		this.grade=grade;
+		this.height=height;
+
+
+	}
+	var son=new Son('Mary',20,'male',100,165); 
+	console.log(son.name)
+	console.log(son.age)
+	console.log(son.sex)
+	console.log(son.grade)
+	console.log(son.height)
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	var yang={
+		name:'yang',
+		age:18,
+		sex:'female',
+		face:'beautiful'
+	}
+	var jiao={
+		name:'jiao',
+		age:30,
+		sex:'male',
+		face:'amazing'
+	}
+	var juan={
+		name:'juan',
+		age:20,
+		sex:'female',
+		face:'general'
+	}
+
+	var arr=[yang,jiao,juan];
+	arr.sort(function(a,b){
+		// if(a.age>b.age){
+		// 	return 1;
+		// }else{
+		// 	return -1;
+		// }
+		return a.age - b.age;
+	})
+</script>	
+</body>
+</html>

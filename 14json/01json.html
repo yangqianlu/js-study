@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON是一种传输数据的格式（以对象为样板，本质上就是对象，但用途是有区别的，对象就是在本地用的，JSON是用来传输的）</title>
+</head>
+<body>
+	<!-- 
+		JSON.parse();string->json; 后台给我们传过来的是字符串形式的json 我们可以通过JSON.parse()把字符串形式的json转换成json格式
+		JSON.stringify();json->string;  //把json格式的数据传输给后台 要把json格式的数据变成字符串形式的json
+	-->
+	<script type="text/javascript">
+		var obj = {
+			'name':'yql',
+			'age':15
+		}
+		console.log(JSON.stringify(obj))//'{"name":"yql","age":15}'
+
+		var str='{"name":"yql","age":15}';
+		var json=JSON.parse(str);
+		console.log(json)//{name: "yql", age: 15}
+	</script>
+</body>
+</html>

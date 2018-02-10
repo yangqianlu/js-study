@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+	//typeof会返回一个变量的基本类型，只有以下几种：number,boolean,string,object,undefined,function
+	console.log(typeof(null)) //'object' 因为null它作为代替一个空对象的 占位的
+	
+
+	var num=(1,2);//一个扩号里面有逗号 结果为最后一个
+	console.log(num)//2 
+	//1.
+	// var f=(
+	// 	function f(){
+	// 		return '1'
+	// 	},
+	// 	function g(){
+	// 		return 2
+	// 	}
+
+	// 	)();
+	// console.log(typeof(f))//number
+
+	//2.
+	var x=1;
+	if(function f(){}){
+		//typeof undefined  ==>'undefined'
+		x+=typeof f;
+	}
+	console.log(x)//1undefined
+</script>
+</html>

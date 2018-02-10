@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	var obj={
+		name:'yql',
+		age:20,
+		sex:'female',
+		height:160,
+		weight:100,
+		__proto__:{
+			food:'yogurt',
+			sports:'jump rope'
+		}
+	}
+
+	// for(var key in obj){
+	// 	console.log(obj[key]) //yql 20 female 160 100 yogurt jump rope
+	// }
+	// 
+	for(var key in obj){
+		if(obj.hasOwnProperty(key)){ //判断这个key是不是自己的属性  不希望拿原型上的属性 
+			console.log(obj[key]) //yql 20 female 160 100
+		}
+	}
+</script>
+</body>
+</html>

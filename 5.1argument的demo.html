@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	//A
+	// function foo1(x){
+	// 	console.log(arguments); 
+	// 	return x
+	// }
+	// foo1(1,2,3,4,5) //[1,2,3,4,5]
+	
+	//B
+	// function foo2(x){
+	// 	console.log(arguments);
+	// 	return x;
+	// }(1,2,3,4,5) //什么都没打印出来
+	
+	//C
+	// (function foo3(x){
+	// 	console.log(arguments)
+	// })(1,2,3,4,5)//[1,2,3,4,5]
+	// 
+	//D
+	(function foo3(x){
+		console.log(arguments)
+	}(1,2,3,4,5)) //[1,2,3,4,5]
+	
+
+
+</script>	
+</body>
+</html>

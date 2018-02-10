@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>slice() 方法可从已有的数组中返回选定的元素。</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//语法：arrayObject.slice(start,end)
+	//		arrayObject.slice(必需,可选)
+	//返回值：返回一个新的数组，包含从 start 到 end （不包括end位的元素）的 arrayObject 中的元素。
+	//
+	
+	var arr=['apple','pineapple','mango','banner','pitaya']
+	var newArr=arr.slice(1,3)
+	console.log(newArr)//['pineapple','mango']
+	console.log(arr)   //['apple','pineapple','mango','banner','pitaya']
+	</script>
+</body>
+</html>

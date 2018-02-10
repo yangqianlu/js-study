@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<!-- 	转义字符：'\' \后面的强制转义为文本(最基本的用法)
+	多行字符串 \n 换行 \t一个缩进
+	字符串换行 -->
+<script type="text/javascript">
+	//1.字面量的形式创建正则表达式
+	// var reg=/abc/;
+	// var str='abcdeRG';
+	// console.log(reg.test(str))//true
+
+
+	//2.正则表达式有自己的属性 i(ignoreCase)忽略大小写  g m
+	// var reg=/abc/i;
+	// var str='abCdeRG';
+	// console.log(reg.test(str))//true
+
+	//2.用new RegExp()的创建方式 创建正则
+	var str="abcdedd";
+	var reg=new RegExp('abc')
+	//var reg=new RegExp('abc','i')
+	console.log(reg.test(str))//true
+
+</script>
+</body>
+</html>

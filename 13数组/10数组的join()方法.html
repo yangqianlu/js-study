@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+		<!-- 
+			1.join()方法用于把数组中的所有元素放入一个字符串。元素是通过指定的分隔符进行分隔的。
+			2.标准语法是 参数得是字符串
+			3.经常和字符串的split()方法配合使用 
+		-->
+	</title>
+</head>
+<body>
+<script type="text/javascript">
+	// var arr=[1,2,3,4,5]
+	// var arr1=arr.join('-')// "1-2-3-4-5"
+	// var arr2=arr.join()// "1,2,3,4,5"
+	// var str=arr2.split() //["1,2,3,4,5"] split() 方法用于把一个字符串分割成字符串数组。
+
+	var string1='baidu',
+		string2='tencent',
+		string3='toutiao',
+		string4='wangyi';
+
+	var newStr=[string1,string2,string3,string4];
+	var newArr=newStr.join('')//"baidutencenttoutiaowangyi"
+	var newArr1=newStr.join()//"baidu,tencent,toutiao,wangyi"
+
+
+
+	// 数组的复习：
+	// 1.改变原数组的方法：
+	// push():在数组的最后一位添加
+	// pop()：剪切数组的最后一位
+	// unshift()：在数组的第一位前面添加
+	// shift()：剪切数组的第一位
+	// splice()：从数组中添加或删除元素 
+	// sort()：数组的排序
+	// reverse():数组的反转
+
+	// 2.不改变原数组的方法
+	// concat():连接两个数组
+	// join()：将数组变成字符串 并将数组的元素通过分隔符连接 返回
+	// slice()：返回数组中选定的元素
+	// toString()：将数组变成字符串
+
+
+</script>	
+</body>
+</html>

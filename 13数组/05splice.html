@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>splice()方法向/从数组中添加/删除项目，然后返回被删除的项目。</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var arr=[1,1,2,2,3,3];
+	//语法
+	//arrayObject.splice(index,howmany,item1,.....,itemX)
+	//arrayObject.splice(必需，必需，可选)
+	//arr.splice(从第几位开始，截取长度，在切口处添加新的数据)
+	
+	// arr.splice(2,0,8)
+	// console.log(arr)//[1,1,8,2,2,3,3]
+
+
+	// arr.splice(2,3,8,9,10)
+	// console.log(arr)//[1,1,8,9,10,3]
+	// 
+	
+
+	arr.splice(-1,0,8,9,10)//-1代表倒数第一位 也就是最后一位
+	console.log(arr)//[1,1,2,2,3,8,9,10,3]
+
+	//如何让-1等于最后一位的？
+	// splice=function(index){
+	// 	index+=index>0?0:this.length;
+	// }
+	</script>
+</body>
+</html>

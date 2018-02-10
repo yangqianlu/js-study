@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	function sum(){ //里面放的是形参
+		//arguments 里面存的是实参列表 [1,2,3]
+		var result=0;
+		for(var i=0;i<arguments.length;i++){
+			result+=arguments[i]
+		}
+		document.write(result)
+	}
+	sum(1,2,3)//里面放的是实参
+
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象如何查看对象的构造函数 constructor</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+	// Person.prototype.constructor
+	
+	function Person(){
+		
+	}
+	var person=new Person()
+	console.log(Person.prototype.constructor)//ƒ Person(){}
+	console.log(person.constructor)//ƒ Person(){}
+	</script>
+</body>
+</html>

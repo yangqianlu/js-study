@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	var Deng={
+		wife1:{name:'xiaoliu'},
+		wife2:{name:'xiaozhang'},
+		wife3:{name:'xiaowang'},
+		wife4:{name:'xiaoli'},
+		wife5:{name:'xiaodeng'},
+		sayWife:function(num){
+			// return this['wife1'] []里面是字符串
+			return this['wife'+num] //字符串加数字还是字符串
+		}
+	}
+
+	console.log(Deng.sayWife(1))  //{name: "xiaoliu"}
+	console.log(Deng.sayWife(2))  //{name: "xiaozhang"}
+	console.log(Deng.sayWife(3))  //{name: "xiaowang"}
+	console.log(Deng.sayWife(4))  //{name: "xiaoli"}
+	console.log(Deng.sayWife(5))  //{name: "xiaodeng"}
+</script>	
+</body>
+</html>

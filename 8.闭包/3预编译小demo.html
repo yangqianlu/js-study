@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+function test(a,b){
+	console.log(a); //1
+	c=0;
+	var c;
+	a=3;
+	b=2;
+	console.log(b) //2
+	function b(){}
+	function d(){}
+	console.log(b) //2
+}
+test(1)
+// 执行结果
+// 1
+// 2
+// 2
+
+
+//预编译发生在函数执行的前一刻
+
+// ① 创建AO对象
+// ② 找形参和变量声明，将变量和形参名作为AO的属性名，值为undefined
+// ③ 将实参值与形参值统一
+// ④ 在函数体里面找函数声明，并把函数名作为AO的属性名 值为函数的函数体 （权重最高 ）
+// 1.创建AO对象
+//② AO{
+// 	a:undefined
+// 	b:undefined
+// 	c:undefined
+
+//③ AO{
+// 	a:1
+// 	b:undefined
+// 	c:undefined
+// 	
+
+// }
+//④ AO{
+// 	a:1
+// 	b:function b(){}
+// 	c:undefined
+// 	d:function d(){}
+// }
+//预编译执行过的 函数执行时就不用执行了
+// // AO{
+// 	a:1
+// 	c:0
+// 	b:function(){}
+// 	d:function d(){}
+// }
+// // // AO{
+// 	a:3
+// 	c:0
+// 	b:2
+// 	d:function d(){}
+// }
+
+</script>
+</body>
+</html>

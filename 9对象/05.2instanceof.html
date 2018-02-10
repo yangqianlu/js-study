@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+
+	</title>
+</head>
+<body>
+	<!-- instanceof:理解
+	1.A对象 是不是  B对象构造出来的
+	2.看A对象的原型链上 有没有B 的原型 -->
+
+	<script type="text/javascript">
+		function Person(){}
+		var person=new Person()
+
+		console.log(person instanceof Person)//true
+		console.log(person instanceof Object) //最顶端就是Object.prototype true
+
+		//用例
+		//给你一个变量 可能是数组 也可能是对象  你通过什么方式可以判断它是数组还是对象
+		
+		// 1.constructor [].constructor==>Array
+		// 2.[] instanceof Array ==>true {} instanceof Array ==>false
+		// 3.Object.prototype.toString().call([]) '[object Array]'  万无一失的方法
+	</script>
+</body>
+</html>

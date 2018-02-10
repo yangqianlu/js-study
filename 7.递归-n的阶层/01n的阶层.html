@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	//求n的阶层
+	//规律 n！=n*(n-1)!
+	//找出口 1！=1 0！=1
+	function mul(n){
+		if(n==1 || n==0){
+			return 1;
+		}
+		return n*mul(n-1)
+	}
+	mul(3)
+	// 3!=3*mul(2)
+	// 2!=2*mul(1)
+	// 1!=1*mul(0)
+</script>
+</body>
+</html>

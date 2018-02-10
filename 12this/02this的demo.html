@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	// var foo='123';
+	// function print(){
+	// 	var foo='456';
+	// 	this.foo='789';
+	// 	console.log(foo);//456
+	// 	console.log(this)//window
+	// }
+	// print();
+
+
+	// var foo='123';
+	// function print(){
+	// 	// var this={} 构造函数前面会隐式添加一个this
+	// 	this.foo='456';
+	// 	//this={foo:456}
+	// 	//console.log(this.foo) //456
+	// 	console.log(foo)//123
+
+	// }
+	//print()//456
+	//new print()//123
+
+
+	var a=5;
+	function test(){
+		// this:{
+
+		// }
+
+		a=0;
+		alert(a);
+		alert(this.a); 
+		var a;
+		alert(a);
+		alert(b)//b is not defined
+	}
+	//test() //0 5 0
+	//AO{}
+	
+	//构造函数也有自己的AO
+	//AO{
+	//this:{}
+	//
+	//}
+	new test()//0 //undefined 0 
+
+
+</script>	
+</body>
+</html>

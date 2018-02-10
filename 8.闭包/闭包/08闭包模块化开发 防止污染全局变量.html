@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模块化开发 防止污染全局变量</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var name="123"
+	var init=(function(){
+		var name='abc';
+		function callName(a,b){
+			console.log(name)
+			console.log(a+b)
+		}
+		return function(){
+			callName(1,2)
+		}
+	}())
+	init()//abc 3
+
+
+	// var initDeng=(function(){
+	// 	var name='bcd';
+	// 	function callName(){
+	// 		console.log(name)
+	// 	}
+	// 	return function(){
+	// 		callName()
+	// 	}
+	// }())
+
+	// initDeng()//bcd
+
+
+</script>
+</body>
+</html>

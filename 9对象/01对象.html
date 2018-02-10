@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+var num=123;//一旦经历了var的操作所得出的属性,window,这种属性叫做不可配置属性 delete不掉的delete num
+//false
+//// window.num1=123 delete window.num1 true
+	var mrZhang={
+		name:'zhangping',
+		age:20,
+		sex:'男',
+		health:100,
+		smoke:function(){
+			console.log('I am smoking')
+			this.health--
+		}
+	}
+	//增 删 改 查
+	//增
+	mrZhang.wife='yang'
+	//删
+	delete mrZhang.name 
+	//改
+	mrZhang.age=21
+	//查
+	mrZhang.age
+
+	console.log(mrZhang['age']) //另一种访问对象的属性 中括号里面必须是字符串
+</script>	
+</body>
+</html>

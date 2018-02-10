@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>利用原型的特点，可以提取共有属性</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//原型相当于祖先  后代可以继承它的一些属性和方法 原型也是对象
+	//Person.prototype --原型
+	//Person.prototype={} 是公共祖先
+	//
+	//Person.prototype.name='yangqianlu';
+	Person.prototype={
+		name:'yal',
+		age:18
+	}
+	function Person(){
+
+	}
+	var person=new Person()
+	console.log(person.name) //yangqianlu
+	</script>
+</body>
+</html>

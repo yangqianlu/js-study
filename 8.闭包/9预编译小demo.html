@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+//1.
+console.log(bar()) //结果 function foo(){}
+function bar(){
+	return foo;
+	foo=10;
+	function foo(){}
+	var foo=11;
+}
+console.log(bar()) //结果 function foo(){}
+// 
+// 
+// 
+// 2.
+// console.log(bar())//11
+// function bar(){
+// 	foo=10;
+// 	function foo(){}
+// 	var foo=11;
+// 	return foo;
+// }
+
+</script>
+</body>
+</html>

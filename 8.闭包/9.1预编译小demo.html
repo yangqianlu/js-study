@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var x=1,y=z=0;
+	function add(n){
+		return n=n+1;
+	}
+	y=add(x); //4
+	function add(n){ //函数声明会提前 覆盖上面的 add方法
+		return n=n+3;
+	}
+	z=add(x);//4
+	console.log(x);//1
+	console.log(y);//4
+	console.log(z);//4
+	</script>
+</body>
+</html>

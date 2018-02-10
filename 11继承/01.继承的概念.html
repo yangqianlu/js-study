@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承的发展史</title>
+</head>
+<body>
+<!-- 1.传统形式--原型链（过多的继承了没用的属性）
+2.借用构造函数 call、apply
+	1.不能继承借用构造函数的原型
+	2.每次构造函数都要多走一个函数
+3.共享原型
+	不能随便改动自己的原型
+4.圣杯模式 -->
+<script type="text/javascript">
+	//1.
+	// Father.prototype.lastName='Deng';
+	// function Father(){
+
+	// }
+	// var father=new Father()
+	// function Son(){
+
+	// }
+	// Son.prototype=Father.prototype; 
+	// var son=new Son()
+	// console.log(son.lastName)//Deng
+
+ 	//2.
+	// Father.prototype.lastName='Deng';
+	// function Father(){
+
+	// }
+	// var father=new Father()
+	// function Son(){
+
+	// }
+	// function inherit(Target,Origin){
+	// 	Target.prototype=Origin.prototype;
+	// }
+
+	// inherit(Son,Father)//放在new前面
+	// Son.prototype.sex='male' //这样给自己添加属性的话 Father也会有影响
+	// var son=new Son()
+	// console.log(son.lastName)//Deng
+	// console.log(son.sex)//male
+	// console.log(father.sex)//male
+
+
+	//如何给son加上自己的属性 并且不会影响到father
+	//圣杯模式
+	//
+	// Father.prototype.lastName='Deng';
+	// function Father(){
+
+	// }
+	// var father=new Father()
+	// function Center(){ //通过一个中间层 来实现
+
+	// }
+	// Center.prototype=Father.prototype;
+	// function Son(){
+
+	// }
+	// Son.prototype=new Center(); //干干净净的一个Center
+	// Son.prototype.sex='male'
+	// var son=new Son()
+	// console.log(son.lastName)//Deng
+	// console.log(son.sex)//male
+	// console.log(father.sex)//undefined
+
+
+	//最终版 --圣杯模式
+	// Father.prototype.lastName='Deng';
+	// function Father(){
+
+	// }
+	// var father=new Father()
+	// function inherit(Target,Origin){
+	// 	function Center(){
+
+	// 	}
+	// 	Center.prototype=Origin.prototype;
+	// 	Target.prototype=new Center()
+	// 	Target.prototype.constructor=Target;//让son的constructor指向自己
+	// 	//Target.prototype.uber=Origin.prototype;//知道自己继承谁
+	// }
+	
+	// function Son(){
+
+	// }
+	// inherit(Son,Father)
+	// Son.prototype.sex='male'
+
+	// var son=new Son()
+	// console.log(son.lastName)//Deng
+	// console.log(son.sex)//male
+	// console.log(father.sex)//undefined
+	
+	
+	Father.prototype.lastName='Deng';
+	function Father(){
+
+	}
+	var father=new Father()
+	//下面这种写法是雅虎的水平
+	var inherit=(function(){
+		var Center=function(){}  //私有化变量
+		return function(Target,Origin){
+			Center.prototype=Origin.prototype;
+			Target.prototype=new Center();
+			Target.prototype.constructor=Target;
+			Target.prototype.uber=Origin.prototype;
+		}
+
+	}())
+	inherit(Son,Father)
+	function Son(){
+
+	}
+	Son.prototype.sex='male'
+	var son=new Son()
+	
+	console.log(son.lastName)//Deng
+	console.log(son.sex)//male
+	console.log(father.sex)//undefined
+
+
+	//闭包的应用：可以实现封装 属性私有化
+	var inherit=(function(){
+		var Center=function(){}
+		return function(Target,Origin){
+			Center.prototype=Origin.prototype;
+			Target.prototype=new Center();
+			Target.prototype.constructor=Target;
+			Target.prototype.uber=Origin.prototype;
+		}
+	}())
+</script>	
+</body>
+</html>

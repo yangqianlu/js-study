@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	// 对象的创建方法
+	// 1.var obj={}
+	// 2.构造函数
+	//    (1)系统自带的构造函数  new Object() Array() Number()
+	//    (2)自定义
+	//    大驼峰命名规则 TheFirst  小驼峰 theFirst
+	//    构造函数 函数名 用大驼峰命名
+	
+	function Car(color){
+		// 构造函数的内部原理
+		// 1.在函数体内最前面隐式加上this={}
+		// 2.执行this.xxx=xxx;
+		// 3.隐式的返回this
+		// var this={}
+		this.color=color;
+		this.name="BMW";
+		this.height='1400';
+		this.width:'4500';
+		this.health=100;
+		this.run=function(){
+			this.health--;
+		}
+		
+		//return this;
+
+	}
+	//构造函数 前提有个new 有了new 就可以产生构造函数的功能
+
+	var car1=new Car('red');
+
+	var car2=new Car('green');
+
+
+	function Student(name,age,sex){
+		this.name=name;
+		this.age=age;
+		this.sex=sex;
+	}
+
+	var student1=new Student('Mary',19,'女');
+	var student2=new Student('Bob',20,'男')
+
+</script>	
+</body>
+</html>

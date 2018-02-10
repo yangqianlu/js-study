@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+// GO:{
+// 	a:undefined
+// 	demo:function demo(){...}
+// 	f:123(等到函数体内预编译到f=123的时候 父级才会有这个值 之前是没有的)
+// }
+// 
+// 
+// // GO:{
+// 	a:100
+// 	demo:function demo(){...}
+// 	f:123
+// }
+// 
+
+a=100;
+function demo(e){
+	function e(){}
+	arguments[0]=2;
+	document.write(e); //2
+	if(a){
+		var b=123;
+		function c(){}; //if 中不能声明函数
+	}
+	var c;
+	a=10;
+	var a;
+	document.write(b); //undefined
+	
+	f=123;
+	document.write(c); //本来应该是function c(){} 但是由于if中不能函数声明 所以打印出undefined
+	document.write(a); //10
+	document.write(f); //123 父级f的值
+}
+var a;
+// AO:{
+// 	e:undefined ==>1 ==>function e(){} ==>2
+// 	b:undefined 
+// 	a:undefined==>10
+// 	c:undefined ==>function c(){}
+// }
+
+demo(1)
+document.write(a);//100
+document.write(f);//123
+
+</script>
+</body>
+</html>

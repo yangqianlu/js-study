@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+
+	// var person={
+	// 	name:'yql',
+	// 	age:10
+	// }
+	// person['sex']='female'
+	// console.log(person['age']) //[]里面是字符串
+	// console.log(person.age)
+	// console.log(person.sex)//female
+
+	
+	Array.prototype.unique=function(){
+		var obj={},
+			arr=[],
+			len=this.length;
+		for(var i=0;i<len;i++){
+			if(!obj[this[i]]){ //!obj[this[i]]代表未定义
+				obj[this[i]]='abc' //赋值不能赋this[i] 因为里面可能是0 !0也会走这段代码
+				arr.push(this[i])
+			}
+		}
+		return arr;
+	}
+
+
+</script>	
+
+<script type="text/javascript">
+	//array.indexOf(item,start)
+	var fruits = ["Banana", "Orange", "Apple", "Mango"];
+	var a = fruits.indexOf("apple");
+	var b = fruits.indexOf("Apple");
+	console.log(a)//-1
+	console.log(b)//2
+
+
+
+	Array.prototype.method=function() {
+		let result=[],
+		len=this.length;
+		for(let i=0;i<len;i++) {
+			if(result.indexOf(this[i]) === -1){
+				result.push(this[i]);
+			}
+		}
+		return result;
+	}
+	console.log([1,2,3,4,5,6,7,8,3,4,3,2,1,2,3,4].method());
+
+
+</script>
+</body>
+</html>

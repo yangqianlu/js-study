@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+//全局依然可以符合预编译的四部曲
+console.log(a)
+var a=123;
+function a(){}
+console.log(a)
+
+	
+//结果
+//function a(){}
+//123
+//
+
+//预编译发生在函数执行的前一刻
+
+// ① 创建GO对象
+// ② 找形参和变量声明，将变量和形参名作为GO的属性名，值为undefined
+// ③ 将实参值与形参值统一
+// ④ 在函数体里面找函数声明，并把函数名作为GO的属性名 值为函数的函数体 （权重最高 ）
+// 1.创建GO对象
+//② GO{
+// 	a:undefined
+//  }
+//④ GO{
+// 	a:function a(){} 
+// 
+// }
+//预编译执行过的 函数执行时就不用执行了
+//  GO{
+// 	a:123
+
+
+</script>
+</body>
+</html>
