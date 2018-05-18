@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        工厂方式缺点：
+        1.没有new；
+        2.代码重复多；
+
+    </title>
+    <script>
+        function createPerson(name,age){ //构造函数 工厂方式
+            var obj=new Object();//原料
+            obj.name=name; //加工开始
+            obj.age=age;
+            obj.showName=function(){
+                alert('我的名字叫'+this.name)
+            }
+            obj.showAge=function(){
+                alert('我的年龄'+this.age)
+            }//加工结束
+            return obj;//出厂
+        }
+
+        var obj=createPerson('blue',28);
+        obj.showAge();
+        obj.showName();
+        var obj2=createPerson('yql',18);
+        obj2.showName();
+        obj2.showAge();
+        alert(obj.showName==obj2.showName) //false 导致性能低
+    </script>
+</head>
+<body>
+
+</body>
+</html>

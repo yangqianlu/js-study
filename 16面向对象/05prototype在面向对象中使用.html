@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>构造函数加属性 原型加方法 首字母大写（规范）</title>
+    <script>
+        function CreatePerson(name,age){
+            //创建对象时前面加new 系统会偷偷的替我们做
+            //var this=new Object()
+            this.name=name; //this指向新new出来的对象
+            this.age=age;
+            //也会偷偷的返回
+            //return this;
+        }
+
+        //在原型上加方法
+        CreatePerson.prototype.showName=function () {
+            alert('我的名字叫'+this.name);
+        }
+        CreatePerson.prototype.showAge=function () {
+            alert('我的年龄'+this.age)
+        }
+        var obj=new CreatePerson('blue',25);
+        var obj2=new CreatePerson('yql',20);
+        obj.showName();
+        obj.showAge();
+        obj2.showName();
+        obj2.showAge();
+
+        alert(obj.showName==obj2.showName) //true 这样就可以共同使用原型上的方法
+    </script>
+</head>
+<body>
+
+</body>
+</html>
