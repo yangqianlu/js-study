@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // \w===[0-9A-z_]
+        var reg=/\wbcd/;
+        var str='wbcd'
+        console.log(reg.test(str)) //true
+
+        // \W===[^\w]
+
+        var reg1=/\Wbcd/;
+        var str1='a*bcd';
+        console.log(reg1.test(str1))//true
+    </script>
+</body>
+</html>

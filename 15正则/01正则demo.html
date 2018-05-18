@@ -21,10 +21,18 @@
 	// console.log(reg.test(str))//true
 
 	//2.用new RegExp()的创建方式 创建正则
-	var str="abcdedd";
-	var reg=new RegExp('abc')
-	//var reg=new RegExp('abc','i')
-	console.log(reg.test(str))//true
+	// var str="abcdedd";
+	// var reg=new RegExp('abc')
+	// //var reg=new RegExp('abc','i')
+	// console.log(reg.test(str))//true
+
+	//查找连续3位都是数字的
+
+	var reg=/[0-9][0-9][0-9]/g;
+	var reg1=/[0-9A-z]/g;
+	var str='1234yrt454443jjkl322'
+
+	console.log(str.match(reg))//[123,454,443,132]
 
 </script>
 </body>
