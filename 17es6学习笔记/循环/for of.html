@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        写法比for循环简洁很多；
+
+        可以用break来终止整个循环，或者continute来跳出当前循环，继续后面的循环；
+
+        结合keys( )获取到循环的索引，并且是数字类型，而不是字符串类型。
+    </title>
+</head>
+<body>
+    <script>
+        var arr=[1,2,3,4,5];
+        for(var i of arr){
+            console.log(i); //1,2,3,4,5
+        }
+        for(let index of arr.keys()){
+            console.log(index); //0,1,2,3,4
+        }
+    </script>
+</body>
+</html>
