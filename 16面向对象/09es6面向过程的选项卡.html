@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input.on{
+            background: red;
+        }
+        .div{
+            width: 100px;
+            height: 100px;
+            border:1px solid #333;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <input type="button" value="aaa" class="on">
+    <input type="button" value="bbb" >
+    <input type="button" value="ccc" >
+    <div class="div" style="display: block">aaa</div>
+    <div class="div">bbb</div>
+    <div class="div">ccc</div>
+</div>
+
+<div id="box2">
+    <input type="button" value="aaa" class="on">
+    <input type="button" value="bbb" >
+    <input type="button" value="ccc" >
+    <div class="div" style="display: block">aaa</div>
+    <div class="div">bbb</div>
+    <div class="div">ccc</div>
+</div>
+<script>
+    window.onload=function(){
+        new Tab('box');
+    }
+    class Tab{
+        constructor(id){
+            this.oBox=document.getElementById(id);
+            this.aBtn=this.oBox.getElementsByTagName('input');
+            this.aDiv=this.oBox.getElementsByTagName('div');
+            this.init();
+        }
+        init(){
+            for(let i=0;i<this.aBtn.length;i++){
+                this.aBtn[i].onclick=function () {
+                    this.hide();
+                    this.show(i);
+                }.bind(this)
+            }
+        }
+        hide(){
+            for(let i=0;i<this.aBtn.length;i++){
+                this.aBtn[i].className='';
+                this.aDiv[i].style.display="none"
+            }
+        }
+        show(index){
+            this.aDiv[index].style.display='block';
+            this.aBtn[index].className='on';
+        }
+    }
+</script>
+</body>
+</html>

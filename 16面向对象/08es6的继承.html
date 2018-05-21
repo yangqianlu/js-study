@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class Person{
+        constructor(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        showName(){
+            return this.name;
+        }
+
+    }
+    class Worker extends Person{ //实现继承
+        constructor(name,age,job="大神"){
+            super(name,age)
+            this.job=job;
+        }
+        showJob(){
+            return this.job;
+        }
+    }
+    var p1=new Person('yql',18)
+    var w2=new Worker('koubi',30)
+    alert(p1.showName())
+    alert(w2.showJob()) //大神
+    alert(p1.showName==w2.showName)//true
+</script>
+</body>
+</html>
