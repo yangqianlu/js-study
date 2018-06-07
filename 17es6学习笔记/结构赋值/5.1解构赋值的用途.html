@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //一、交换变量的值
+        //传统做法
+        var x = 1;
+        var y = 2;
+        var z = x;//第三个变量临时存放x的值
+        x = y;  //把y的值赋给x；
+        y = z;  //把z的值赋值给y；
+        console.log(x); //结果：x为2
+        console.log(y); //结果：y为1
+
+        //解构做法
+        var x = 1;
+        var y = 2;
+        var [x,y]=[y,z]
+        console.log(x)//2
+        console.log(y)//1
+
+    </script>
+</body>
+</html>

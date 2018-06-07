@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            function fetchApi(option,callbackS,callbcakE){
+                
+
+                setTimeout(function(){
+                    console.log(option.url)
+                    console.log(option.name)
+                },100,callbackS())
+
+            }
+
+            fetchApi({
+                url:'baidu.com',
+                name:'yql'
+            },function(){
+                console.log('success')
+            })
+    </script>
+</body>
+</html>

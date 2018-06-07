@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数只能返回一个值，我们可以将多个值装在一个数组或者对象中，再用解构赋值快速提取其中的值。</title>
+</head>
+<body>
+    <script>
+        function demo(){
+            return {'name':'露露','age':18}
+        }
+
+        var {name,age}=demo()
+        console.log(name)//露露
+        console.log(age)//18
+
+        function app() {
+            return {
+                foo: 1,
+                bar: 2
+            };
+        }
+        let { foo, bar } = app();
+        console.log(foo)//1
+        console.log(bar)//2
+
+    </script>
+</body>
+</html>

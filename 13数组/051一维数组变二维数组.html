@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        var arr = ['apple', 'banner', 'orange', 'pear', 'conteng', 'header', 'yellow', 'red', 'black', 'white', 'phone',
+            'green', 'yee', 'yel'
+        ];
+        //第一种方式
+        // let resArr = [...arr];
+
+        // let foodArr = [];
+        // for (let i = 0, j = 0; i < arr.length; i += 8, j++) {
+        //     foodArr[j] = resArr.splice(0, 8);
+        // }
+        // console.log(foodArr)
+        // console.log(arr)
+
+        //第二种方式
+            
+        var arr = ['apple', 'banner', 'orange', 'pear', 'conteng', 'header', 'yellow', 'red', 'black', 'white', 'phone',
+            'green', 'yee', 'yel'
+        ];
+        var arr1=[];
+        arr.forEach((item,index)=>{
+            var idx=Math.floor(index/8);
+            if(!arr1[idx]){
+                    arr1[idx]=[]
+            }
+            arr1[idx].push(item)
+            
+        })
+        console.log(arr1)
+
+
+    </script>
+</body>
+
+</html>

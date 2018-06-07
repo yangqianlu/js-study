@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var pro=new Promise(function(resolve,reject){
+            var conf=true;
+            if(conf){
+                resolve('操作成功')
+            }else{
+                reject('操作失败')
+            }
+        })
+
+        pro.then(function(res){
+            console.log(res)//操作成功
+        })
+    </script>
+</body>
+</html>

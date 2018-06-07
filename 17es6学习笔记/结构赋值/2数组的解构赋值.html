@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+            1、解构赋值可以嵌套的
+            2.允许设置默认值
+            3.数组解构可以跳跃赋值
+            4.数组解构可以截取
+    </title>
+</head>
+<body>
+    <script>
+        //1、解构赋值可以嵌套的
+        var [a,b,[c,d]]=[1,2,[3,4]]
+        console.log(a)//1
+        console.log(b)//2
+        console.log(c)//3
+        console.log(d)//4
+
+
+        let [a,[b,{name,age}],d] = [1,[4,{name:1,age:1}],6];
+        console.log(a,b,d,name,age);//1 4 6 1 1
+
+        //2、不完全解构
+        var [e,f,j]=[1,2]
+        console.log(e)//1
+        console.log(f)//2
+        console.log(j)//undefined
+
+
+        //3、允许设定默认值
+
+        var [k,l,m=2]=[5,6]
+        //var [n,o,p=2]=[5,6,9]
+        var [n,o,p=2]=[5,6,undefined]
+        console.log(k)//5
+        console.log(l)//6
+        console.log(m)//2
+        console.log(n)//5
+        console.log(o)//6
+        console.log(p)//2 注意当新的值为undefined的时候，是不会覆盖默认值的
+
+        //数组解构可以跳跃赋值 取出数组第三个
+        var [,,x] = [1,2,4];
+        console.log(x)//4
+
+
+        //数组解构可以截取
+
+        let [,...x] = [1,2,4];
+        console.log(x)//[ 2, 4 ]
+    </script>
+</body>
+</html>

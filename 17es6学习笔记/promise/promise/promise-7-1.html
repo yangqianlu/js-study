@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let pro1 = new Promise(function(resolve){
+            setTimeout(function () {
+                resolve('实例1操作成功');
+            },4000);
+         });
+
+    //初始化实例pro2
+    let pro2 = new Promise(function(resolve,reject){
+        setTimeout(function () {
+            reject('实例2操作失败');
+        },2000);
+    });
+
+    Promise.race([pro2,pro1]).then(function(result){
+        console.log(result);
+    }).catch(function(error){
+        console.log(error);
+    });
+    //打印结果：实例2操作失败
+    </script>
+</body>
+</html>
