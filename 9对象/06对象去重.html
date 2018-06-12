@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        不能用push给对象添加属性
+        给对象插入值，直接赋值就行了。
+        var json = {"width":"10","height":"10"};
+        json['long']="10";
+    </title>
+</head>
+<body>
+    <script>
+        var obj={
+            name:'yql',
+            age:20,
+            job:'web',
+            name:'zhang'
+        }
+        function obj_fn(obj){
+            var obj1={}
+            for(let item in obj){                
+                if(!obj1[item]){
+                    obj1[item]=obj[item]  //注意不能用obj1.push(obj[item]) 不能用push
+                }
+            }
+            return obj1
+        }
+        obj_fn(obj)
+        console.log(obj)
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //方法一：
+        // let o1 = { a: 1, b: 2, c: 3 ,d:5};
+
+        // let o2 = {...o1, d: 4}; 
+        // console.log(o2) //{a:1,b:2,c:3,d:4}
+
+
+        //方法二：
+
+        let o1 = { a: 1, b: 2, c: 3 };
+
+        let o2 = Object.assign({}, o1, { a:2,b:4,d:8 }); 
+        console.log(o2) // o2 = {a: 2, b: 4, c: 3, d: 8}
+
+    </script>
+</body>
+</html>
