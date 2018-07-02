@@ -10,18 +10,16 @@
     <script>
         //方法一：
         // let o1 = { a: 1, b: 2, c: 3 ,d:5};
-
-        // let o2 = {...o1, d: 4}; 
-        // console.log(o2) //{a:1,b:2,c:3,d:4}
+            
+        // //let o2 = {...o1, d: 4,e:6}; 
+        // console.log(o2) //{a:1,b:2,c:3,d:4,e:6}
 
 
         //方法二：
 
         let o1 = { a: 1, b: 2, c: 3 };
-
         let o2 = Object.assign({}, o1, { a:2,b:4,d:8 }); 
         console.log(o2) // o2 = {a: 2, b: 4, c: 3, d: 8}
-
     </script>
 </body>
 </html>

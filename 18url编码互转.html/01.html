@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function toUnicode(str) {
+            var res = [];
+            for (var i = 0; i < str.length; i++) {
+                res[i] = ("00" + str.charCodeAt(i).toString(16)).slice(-4);
+            }
+            return "\\u" + res.join("\\u");
+        }
+
+        function decodeUnicode(str) {
+            str = str.replace(/\\/g, "%");
+            return unescape(str);
+        }
+
+        var toUnicode=toUnicode('https://cityboxapi.fruitday.com/public/di_coupon.html')
+        console.log(toUnicode)
+        var decodeUnicode=decodeUnicode(toUnicode)
+        console.log(decodeUnicode)
+    </script>
+</body>
+
+</html>
