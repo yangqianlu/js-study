@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>斐波那契数列</title>
+</head>
+<body>
+<!--1 1 2 3 5 8 -->
+<!--当前位是前面两位的和--> 第一位是1 第二位是1
+
+<script>
+    function add(n){
+        var first=1,
+            second=1,
+            third;
+        if(n>2){
+            for(var i=0;i<n-2;i++){
+                third=first+second;
+                first=second;
+                second=third;
+            }
+            console.log(third)
+        }else{
+            console.log(1)
+        }
+    }
+    add(6)
+</script>
+</body>
+</html>

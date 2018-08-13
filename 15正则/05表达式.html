@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--正则表达式的test方法  字符串的match()方法-->
+<script>
+    //查找连续3位都是数字的
+    //[]代表一个表达式 里面是区间
+    //[^] ^放在表达式里代表非 [^A] 除了A
+    // var reg=/[^a][^b]/g;
+    // var str='ab1cd';
+    // console.log(str.match(reg)) //['b1','cd']
+
+    var reg=/[0-9][0-9][0-9]/g; //g全局匹配
+    var reg1=/[0-9A-z]/g;
+    var str='1234yrt454443jjkl322'
+    console.log(str.match(reg))//[123,454,443,132]
+</script>
+</body>
+</html>

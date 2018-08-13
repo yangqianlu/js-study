@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>匹配特殊字符或有特殊搭配原则的字符的最佳选择</title>
 </head>
 <body>
-<!-- 	转义字符：'\' \后面的强制转义为文本(最基本的用法)
-	多行字符串 \n 换行 \t一个缩进
-	字符串换行 -->
+	<!-- \n 换行 \t一个缩进-->
+	<!--正则表达式的test方法  字符串的match()方法-->
 <script type="text/javascript">
 	//1.字面量的形式创建正则表达式
 	// var reg=/abc/;
@@ -15,7 +14,7 @@
 	// console.log(reg.test(str))//true
 
 
-	//2.正则表达式有自己的属性 i(ignoreCase)忽略大小写  g m
+	//2.正则表达式有自己的属性 i(ignoreCase)忽略大小写   m
 	// var reg=/abc/i;
 	// var str='abCdeRG';
 	// console.log(reg.test(str))//true
@@ -26,13 +25,7 @@
 	// //var reg=new RegExp('abc','i')
 	// console.log(reg.test(str))//true
 
-	//查找连续3位都是数字的
 
-	var reg=/[0-9][0-9][0-9]/g;
-	var reg1=/[0-9A-z]/g;
-	var str='1234yrt454443jjkl322'
-
-	console.log(str.match(reg))//[123,454,443,132]
 
 </script>
 </body>

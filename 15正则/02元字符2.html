@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+\s查找空白字符
+
+空白字符==tab键 enter键  空格键 等等
+
+\S===[^\s]
+
+\s 包括了以下5种 ==[\n\f\r\t\v ]
+\n 换行符
+\f 换页符
+\r 回车符
+\t 制表符
+\v 垂直制表符
+<body>
+<script>
+var reg=/\ts/g;
+var str='adb sd'
+var str1='ab\tsd'
+console.log(reg.test(str)) //fasle
+  console.log(str1.match(reg)) //["	s"]
+</script>
+</body>
+</html>
