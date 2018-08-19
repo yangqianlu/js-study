@@ -23,8 +23,8 @@
 		}
 		return aaa //把地址扔出去 这样就可以形成闭包了 （内部函数被return出去将会生成闭包）
 	}
-	var demo=add()  //demo接收的是aaa的地址
-	demo()//101
+	var demo=add()  //demo接收的是aaa的地址 并且add的执行期上下文销毁
+	demo()//101 因为每次改变的是add中AO的conut demo()执行完只是把自己的AO销毁 不会销毁别人的AO
 	demo()//102
 	add()()//101
 	add()()//101
