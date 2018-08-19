@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+	//1.终止函数
+	function sum(){
+		console.log('2');
+		return //终止函数
+		console.log('8');
+	}
+	
+	sum() //2
+
+	//2.返回值并达到终止函数
+	function myNumber(target){
+		return +target; //隐式类型转换
+		console.log('能不能打印出来')
+	}
+	var num=myNumber('123')
+	console.log(typeof(num) + ':' +num)
+
+</script>
+</body>
+</html>
