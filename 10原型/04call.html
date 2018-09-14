@@ -6,18 +6,17 @@
 </head>
 <body>
 	<script type="text/javascript">
-
 	function Person(name,age,sex){
 		this.name=name;
-		this.age=age;
-		this.sex=sex;
+        this.age=age;
+        this.sex=sex;
 	}
 
 	function Son(name,age,sex,grade,height){
 		// this.name=name;
 		// this.age=age;
 		// this.sex=sex;
-		Person.call(this,name,age,sex) //Person.call
+		Person.call(this,name,age,sex) //Person.call  Person构造函数里面的this全部变成这个this
 		this.grade=grade;
 		this.height=height;
 

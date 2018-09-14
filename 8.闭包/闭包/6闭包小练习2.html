@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // function test(){
+    //     var arr=[];
+    //     for(var i=0;i<10;i++){
+    //         arr[i]=function(){ //这是一条赋值语句 前面的arr[i]中的i是立马兑现的
+    //             console.log(i) //后面函数需要下面执行的时候才会兑现i 兑现的时候是共用test中的AO中的i
+    //         }
+    //     }
+    //     return arr; //把arr保存到外面
+    // }
+    // var myArr=test();
+    // for(var j=0;j<10;j++){
+    //     myArr[j](); //10 10 10 10 10 10 10 10 10 10
+    // }
+
+    //解决闭包问题
+    function test(){
+        var arr=[];
+        for(var i=0;i<10;i++){
+            (function(j){
+                arr[j]=function(){
+                    console.log(j)
+                }
+            }(i)) //在站在自己的立即执行函数上看i（数据）
+        }
+        return arr;
+    }
+    var myArr=test();
+    for(var j=0;j<10;j++){
+        myArr[j](); //0 1 2 3 4 5 6 7 8 9
+    }
+</script>
+</body>
+</html>

@@ -2,7 +2,16 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>利用原型的特点，可以提取共有属性</title>
+	<title>
+		定义：原型是function对象的一个属性，它是构造函数制造出来的对象的公共祖先，它是当function定义的时候就有
+		Person.prototype={
+			constructor:function Person() //可以手动更改
+		}
+		通过构造函数产生的对象可以继承该原型上的属性和方法，原型也是对象
+
+
+		利用原型的特点，可以提取共有属性
+	</title>
 </head>
 <body>
 	<script type="text/javascript">
@@ -12,13 +21,15 @@
 	//
 	//Person.prototype.name='yangqianlu';
 	Person.prototype={
-		name:'yal',
+		name:'yql',
 		age:18
 	}
 	function Person(){
 
 	}
 	var person=new Person()
+	person.name='james' //这个不会修改原型上的属性  而是给自己增加了一个name属性 原型上的属性 不能通过对象修改
+	//只能通过原型自己修改
 	console.log(person.name) //yangqianlu
 	</script>
 </body>

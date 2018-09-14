@@ -14,7 +14,8 @@
 <script type="text/javascript">
 //当内部函数通过某种方式被保存到外部时，将会生成闭包。
 //闭包会导致原有作用域链不释放，造成内存泄露。
-//内存泄露 就是内存占用 (本来是add执行完了就会把add的执行期上下文给销毁了 但是aaa把add的执行期上下文保存到外部了 所以aaa依然可以访问add的变量count)
+//内存泄露 就是内存占用 (本来是add执行完了就会把add的执行期上下文给销毁了
+// 但是aaa把add的执行期上下文保存到外部了 所以aaa依然可以访问add的变量count)
 	function add(){
 		var count=100
 		function aaa(){
@@ -31,6 +32,20 @@
 	add()()//101
 	demo()//103
 	demo()//104
+
+
+
+	var mydemo;//定义全局
+	function test(){
+	    var a=100;
+	    function demo(){
+	        console.log(a)
+		}
+		mydemo=demo //让里面的函数保存到外面 除了return  还有这种赋值给全局变量
+	}
+	test()
+	mydemo() //100
+
 </script>
 </body>
 </html>
