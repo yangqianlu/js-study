@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>array.map(callback,[ thisObject]);</title>
+</head>
+<body>
+<!--标准定义下，map方法会传递3个参数-->
+arr.map(function(item, index, arr){
+.....
+});
+parseInt(string, radix);
+string: 需要转化的字符，如果不是字符串会被转换，忽视空格符。
+radix：数字2-36之前的整型。默认使用10，表示十进制。
+这个参数的意义是指把前面的字符看作是多少进制的数字，所谓的基数。
+<script>
+    // 将'123'看作5进制数，返回十进制数38 => 1*5^2 + 2*5^1 + 3*5^0 = 38
+    console.log(parseInt('123', 5))
+</script>
+</body>
+</html>
