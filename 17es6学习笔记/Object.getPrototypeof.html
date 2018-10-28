@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function Pasta(grain, width) {
+        this.grain = grain;
+        this.width = width;
+    }
+
+    var spaghetti = new Pasta("wheat", 0.2);
+    var proto = Object.getPrototypeOf(spaghetti);
+    console.log(proto)//Pasta
+    // Object.setPrototypeOf()用来设置一个对象的prototype对象。
+   Object.setPrototypeOf(spaghetti,Object.prototype)
+    // Object.getPrototypeOf()用于读取一个对象的 prototype 对象。
+    proto = Object.getPrototypeOf(spaghetti);
+    console.log(proto)//Object
+
+
+</script>
+</body>
+</html>
