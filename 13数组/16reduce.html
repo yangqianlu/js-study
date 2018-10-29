@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var cars=['BMW','Benz','Tesla','BMW','Benz','Toyota'];
+
+    const carsObj=cars.reduce((obj,name)=>{
+        obj[name]=obj[name]?++obj[name]:1;
+        return obj
+    },{})
+
+    console.log(carsObj)
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var car={
+        model:'BMW 2018',
+        engine:{
+            v6:true,
+            turbo:true,
+            vin:123456
+        }
+    }
+
+    const modelAndVin=({model,engine: {vin}})=>{
+        console.log(vin)
+        console.log(`model:${model} vin:${vin}`)
+    }
+    modelAndVin(car)
+</script>
+</body>
+</html>

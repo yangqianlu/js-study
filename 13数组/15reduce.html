@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用reduce匹配圆括号</title>
+</head>
+<body>
+<script>
+    const isParentsBalanced=(str)=>{
+         return str.split('').reduce((counter,char)=>{
+            if(counter<0){
+                return counter
+            }else if(char==='('){
+                return ++counter
+            }else if(char===')'){
+                return --counter
+            }else {
+                return counter
+            }
+        },0)
+    }
+
+    console.log(isParentsBalanced('(()(')) //2
+    console.log(isParentsBalanced(')())')) //-1
+
+
+</script>
+</body>
+</html>
