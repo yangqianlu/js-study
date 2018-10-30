@@ -8,10 +8,22 @@
 </head>
 <body>
 <script>
-    let arr=[1,2,3,4,5,6];
-    arr.forEach(element => {
-        console.log(element)
-    });
-</script> 
+    let arr=[{'name':'yql','age':18},{'name':'huanhuan','age':20}];
+
+    // for(var i=0;i<arr.length;i++){
+    //     arr[i].me=false;
+    //     arr[i].like='yql'
+    // }
+
+    arr.map(element=>{
+        element.me=false;
+        element.like='yql'
+    })
+    // arr.forEach(element => {
+    //     element.me=false;
+    //     element.like='yql'
+    // });
+    console.log(arr)
+</script>
 </body>
 </html>
