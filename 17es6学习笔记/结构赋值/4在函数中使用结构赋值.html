@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function aaa([a,b]) {
+    //    return a+b
+    // }
+    // aaa([1,2])
+
+    // var ccc= [[1, 2], [3, 4]].map(([a, b]) =>  a + b);
+    // var ccc= [[1, 2], [3, 4]].map(([a, b]) => {return a + b});
+    // console.log(ccc) //[3,7]
+
+
+   function foo({x=1,y=2}={}) {
+        console.log([x,y])
+   }
+   foo({x:3,y:4}) //[3,4]
+    foo({x:3}) //[3,2]
+    foo({})//[1,2]
+    foo()//[1,2]
+
+
+//参数指定默认值
+    function move({x,y}={x:1,y:2}) {
+        console.log([x,y])
+    }
+    move({x:3,y:4})//[3,4]
+    move({x:3})//[3,undefined]
+    move({})//[undefined,undefined]
+    move()//[1,2]
+</script>
+</body>
+</html>

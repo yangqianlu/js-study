@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //函数参数的默认值是空对象，但是设置了对象解构赋值的默认值
+    function foo1({x=1,y=1}={}) {
+        console.log(x,y)
+    }
+    //函数参数的默认值是一个有具体属性的对象，但是没有设置对象解构赋值的默认值。
+     function foo2({x,y}={x:1,y:1}) {
+         console.log(x,y)
+     }
+
+    foo1({x:3,y:4}) //3,4
+    foo2({x:3,y:4})//3,4
+
+    foo1({x:3})//3,1
+    foo2({x:3}) //3,undefined
+
+    foo1({}) //1,1
+    foo2({}) //undefined,undefined
+
+    foo1({z:3})//1,1
+    foo2({z:3})//undefined,undefined
+
+    foo1()//1,1
+    foo2() //1,1
+</script>
+</body>
+</html>

@@ -13,16 +13,25 @@
 <body>
     <script>
 
-        var {a,b,c}={'a':1,'b':2,'c':3}
-        console.log(a)//1
-        console.log(b)//2
-        console.log(c)//3
+        // var {a,b,c}={'a':1,'b':2,'c':3}
+        // console.log(a)//1
+        // console.log(b)//2
+        // console.log(c)//3
+        //
+        //
+        //
+        // var {d,b=3} = {"d":4};
+        // console.log(d)//4
+        // console.log(b)//3
 
 
+        const node = {loc: {start: {line: 1, column: 5}}};
+let {loc,loc:{start},loc:{start:{line,column}}}=node
 
-        var {d,b=3} = {"d":4};
-        console.log(d)//4
-        console.log(b)//3
+        console.log(loc) //{start: {line: 1, column: 5}}
+        console.log(start)//{line: 1, column: 5}
+        console.log(line) //1
+        console.log(column)//5
     </script>
 </body>
 </html>

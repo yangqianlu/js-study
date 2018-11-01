@@ -9,6 +9,7 @@
             2.允许设置默认值
             3.数组解构可以跳跃赋值
             4.数组解构可以截取
+            5.如果解构不成功，变量的值就等于undefined。
     </title>
 </head>
 <body>
@@ -48,10 +49,6 @@
         console.log(x)//4
 
 
-        //数组解构可以截取
-
-        let [,...x] = [1,2,4];
-        console.log(x)//[ 2, 4 ]
     </script>
 </body>
 </html>
