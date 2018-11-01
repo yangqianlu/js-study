@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var users = [
+        {name: "张含韵", "email": "zhang@email.com"},
+        {name: "江一燕",   "email": "jiang@email.com"},
+        {name: "李小璐",  "email": "li@email.com"}
+    ];
+    //获取所有人的email
+    var emails=users.map(user=>user.name)
+    console.log(emails.join(',')) //"zhang@email.com", "jiang@email.com", "li@email.com"
+    //获取指定人的email
+    // var liEmail=emails.filter(email=>/^li/.test(email))
+    // console.log(liEmail.join('')) //li@email.com
+</script>
+</body>
+</html>

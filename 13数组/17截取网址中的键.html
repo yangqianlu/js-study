@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var src="https://bot.ifchange.com/chatbot/uuid=xxx&position_id=xxx&resume_id=xxx&src=xxx"
+    var Idx=src.lastIndexOf('/')
+    console.log(Idx)
+    var strSlice=src.substring(Idx+1,src.length);
+    console.log(strSlice) //"uuid=xxx&position_id=xxx&resume_id=xxx&src=xxx"
+    var paramArr=strSlice.split('&')
+    //console.log(paramArr) //["uuid=xxx", "position_id=xxx", "resume_id=xxx", "src=xxx"]
+    var paramsObj=[]
+    paramArr.forEach(item=>{
+        var itemArr = item.split('=')
+       //console.log(itemArr)
+        paramsObj[itemArr[0]]=itemArr[1]
+    })
+
+    console.log(paramsObj) //[uuid: "xxx", position_id: "xxx", resume_id: "xxx", src: "xxx"]
+
+</script>
+</body>
+</html>

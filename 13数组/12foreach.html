@@ -8,22 +8,27 @@
 </head>
 <body>
 <script>
-    let arr=[{'name':'yql','age':18},{'name':'huanhuan','age':20}];
+    let arr=[{name:'yql','age':18},{name:'huanhuan','age':20}];
 
     // for(var i=0;i<arr.length;i++){
     //     arr[i].me=false;
     //     arr[i].like='yql'
     // }
 
-    arr.map(element=>{
+    // let ccc=arr.map(element=>{ return element.name})
+    // console.log(ccc)//['yql','huanhuan']
+    // console.log(Object.prototype.toString.call(ccc)) //[object Array]
+
+
+    arr.forEach(element => {
         element.me=false;
         element.like='yql'
-    })
-    // arr.forEach(element => {
-    //     element.me=false;
-    //     element.like='yql'
-    // });
+    });
     console.log(arr)
+
+
+
+
 </script>
 </body>
 </html>
