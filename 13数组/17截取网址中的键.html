@@ -6,7 +6,7 @@
 </head>
 <body>
 <script>
-    var src="https://bot.ifchange.com/chatbot/uuid=xxx&position_id=xxx&resume_id=xxx&src=xxx"
+    var src="https://bot.ifchange.com/chatbot/uuid=xxx&position_id=xxx&resume_id=xxx&src=xxx&ids=1,2"
     var Idx=src.lastIndexOf('/')
     console.log(Idx)
     var strSlice=src.substring(Idx+1,src.length);
@@ -21,7 +21,15 @@
     })
 
     console.log(paramsObj) //[uuid: "xxx", position_id: "xxx", resume_id: "xxx", src: "xxx"]
+if(paramsObj.ids.length>1){
+    var obj=paramsObj.ids.split(',')
+    console.log(obj)
+    paramsObj.ids= obj.map((item)=>parseInt(item))
+}
+    console.log(paramsObj)
 
+    // var arr=['11','222']
+    // console.log(arr.map((ite)=>parseInt(ite)))
 </script>
 </body>
 </html>

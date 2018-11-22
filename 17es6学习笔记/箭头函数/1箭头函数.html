@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        1.箭头函数根本没有自己的this
+        2.函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
+    </title>
+</head>
+<body>
+<script>
+//es6
+    function foo() {
+        setTimeout(()=>{
+            console.log(this.name)
+        },1000)
+    }
+    //es5
+    function foo() {
+        var _this=this
+        setTimeout(function () {
+            console.log(_this.name)
+        },100)
+
+    }
+
+var handler = {
+    id: '123456',
+    init: ()=> {
+         console.log(this)//window
+    }
+};
+var handler = {
+    id: '123456',
+    init: function (){
+        let a = ()=> {
+            console.log(this.id)
+        }//window
+        let b = function (){
+            console.log(this.id)
+        }
+        return {
+            a: a,
+            b: b
+        }
+    }
+    }
+let temp = handler.init()
+    console.log(temp)
+    temp.b()
+    temp.a()
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>利用对象解构给函数参数默认值</title>
+</head>
+<body>
+<script>
+    function fetch(url, {
+        data = {}, method = 'POST', headers = {
+            "content-type": "application/json",
+            'cache-control': "no-cache"
+        }
+    } = {}) {
+        console.log(method);
+        console.log(headers);
+        console.log(data)
+    }
+
+    fetch(
+        "http://example.com",
+        {
+            method: "GET",
+            data: {
+                name: 'lulu',
+                phone: 13651865441
+            }
+        })
+    fetch(
+        "heep://example.com",
+        {
+            data: {name: 'yql'},
+        })
+</script>
+</body>
+</html>
