@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步</title>
+</head>
+<body>
+<script>
+    async function timeout() {
+        return 'hello world'
+    }
+    timeout();//什么也没有
+    console.log(timeout());//返回一个promise对象
+    timeout().then(result => {
+        console.log(result); //hello world
+    })
+    console.log('虽然在后面，但是我先执行');
+</script>
+</body>
+</html>
