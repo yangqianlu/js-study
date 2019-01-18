@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Array(100)创建了一个包含100个空位的数组。 Array(100)创建的数组不可迭代
+     //var arr = Array(100).join(' ').split('').map((item,index)=>{return index})
+
+    //创建了一个包含100个undefined的数组， (Array.from创建的数组是可以迭代的)
+    var arr = Array.from({length:10}).map(function(item,index){return index});
+    console.log(arr) //[0,1,2,3,4,5,6,7,8,9]
+
+
+    const RANDOM_STR='qwertyuiopasdfghjklzxcvbnm1234567890!@#$%^&*()_+=QWERTYUIOPLKJHGFDSAZXCVBNM'
+    const  getRandomString=()=>{
+        //(Math.random()*100)+1 1到100的数
+        const index=Math.floor(Math.random()*(RANDOM_STR.length));
+        console.log(index)
+        return RANDOM_STR.charAt(index)
+    }
+    //console.log(getRandomString())
+    const  getRandomLenfth=(length)=>{
+        return Array.from({length}).map(()=>getRandomString()).join("")
+    }
+    console.log(getRandomLenfth(15))
+</script>
+</body>
+</html>
