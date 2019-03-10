@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        array.map(function(currentValue, index, arr), thisValue)
+        map的回调函数中支持return返回值
+    </title>
+</head>
+<body>
+<script>
+    let arr=[{name:'yql','age':18},{name:'huanhuan','age':20}];
+
+    const nameArr=arr.map(ele=>ele.name)
+    console.log(nameArr) //['yql','huanhuan'];
+
+</script>
+</body>
+</html>

@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>
+        array.forEach(function(currentValue, index, arr), thisValue)
+        仅仅是便利数组的每一项
+        返回undefined 
+    </title>
 </head>
 <body>
 <script>
@@ -15,17 +19,11 @@
     //     arr[i].like='yql'
     // }
 
-    // let ccc=arr.map(element=>{ return element.name})
-    // console.log(ccc)//['yql','huanhuan']
-    // console.log(Object.prototype.toString.call(ccc)) //[object Array]
-
-
-    arr.forEach(element => {
-        element.me=false;
-        element.like='yql'
-    });
-    console.log(arr)
-
+    // arr.forEach(element => {
+    //     element.me=false;
+    //     element.like='yql'
+    // });
+ 
 
 
 

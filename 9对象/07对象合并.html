@@ -1,25 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        //方法一：
-        // let o1 = { a: 1, b: 2, c: 3 ,d:5};
-            
-        // //let o2 = {...o1, d: 4,e:6}; 
-        // console.log(o2) //{a:1,b:2,c:3,d:4,e:6}
+      //方法一：
+      // let o1 = { a: 1, b: 2, c: 3 ,d:5};
+
+      // //let o2 = {...o1, d: 4,e:6};
+      // console.log(o2) //{a:1,b:2,c:3,d:4,e:6}
+
+      //方法二：
+
+      // let o1 = { a: 1, b: 2, c: 3 };
+      // let o2 = Object.assign({}, o1, { a:2,b:4,d:8 });
+      // console.log(o2) // o2 = {a: 2, b: 4, c: 3, d: 8}
+
+      //错误使用方式  obj2改变了 obj也跟着改变了
+      let obj = { name: 'yql', work: { age: 12, weight: 100 } }
+      let obj2 = Object.assign({}, obj)
+      obj2.name = '程序员'
+      obj2.work.age = 18
+      //console.log(obj2,'obj2')//{name:'程序员',work:{age:18,weight:100}};
+      //console.log(obj,'obj')//{name:'yql',work:{age:18,weight:100}};
+
+      //正确的使用  定义了一个新的age对象
+      let aaa = { name: '二月', age: { c: 12, color:{one:'red',two:'green'}} }
+      let age = { c: 88,color:{one:'orange'} }
+      // let bbb=Object.assign({},aaa,{age:age})
+      let bbb = Object.assign({}, aaa, { age })
+      bbb.age.weight = 100
+      console.log(bbb, 'bbb')//{ name: '二月', age: { c: 88, color:{one:'orange'}} }
+      console.log(aaa, 'aaa')//不变
 
 
-        //方法二：
+      //第二种方式  
 
-        let o1 = { a: 1, b: 2, c: 3 };
-        let o2 = Object.assign({}, o1, { a:2,b:4,d:8 }); 
-        console.log(o2) // o2 = {a: 2, b: 4, c: 3, d: 8}
+      let ccc={name:'yql',age:{weight:100}}
+      let ddd={...ccc,age:{weight:99}};
+      console.log(ccc,'ccc')//不变
+      console.log(ddd,'ddd')//{name:'yql',age:{weight:99}}
+
+
+
     </script>
-</body>
+  </body>
 </html>

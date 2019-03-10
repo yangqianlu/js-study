@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>filter</title>
+    <title>filter 返回数组，包含了符合条件的所有元素。如果没有符合条件的元素则返回空数组。</title>
 </head>
 <body>
 
@@ -23,9 +23,10 @@
 
     //2.实现元素过滤
     var arr = [1, 2, 4, 5, 6, 9, 10, 15];
-    var r = arr.filter(function (x) {
-        return x % 2 !== 0;
-    });
+    // var r = arr.filter(function (x) {
+    //     return x % 2 !== 0;
+    // });
+    var r = arr.filter(x =>x % 2 !== 0);
     console.log(r) // [1, 5, 9, 15]
 
 
@@ -34,10 +35,14 @@
     var r, arr = ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry'];
 
     r = arr.filter(function (element, index, self) {
-        //	console.log(self.indexOf(element))
         return self.indexOf(element) === index;
     });
     console.log(r);
+
+    //映射关系实现  找到users里对象id在ids里面的
+    const ids=[1,2,3,4,6]
+    const users=[{name:'yql',id:1},{name:'lanyi',id:2},{name:'lizilu',id:3},{name:'qianjuan',id:4},{name:'fangfang',id:5},{name:'hello',id:6},{name:'chenyin',id:7}] 
+    const filArr=users.filter(user=>ids.includes(user.id)).map(item=>item.name)
 </script>
 </body>
 </html>

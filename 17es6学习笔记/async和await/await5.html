@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+async function fn(flag){
+    if(flag){
+        return '正常执行'
+    }else{
+        throw '抛出错误'
+    }
+}
+// console.log(fn(false)); 
+fn(false).catch(()=>{})
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        1.箭头函数根本没有自己的this
+        2.函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
+    </title>
+</head>
+<body>
+<script>
+function fn(name,age=18){
+    console.log(name,age)
+} 
+fn('yql')//yql 18
+fn('yql',20)//yql 20
+
+</script>
+</body>
+</html>
