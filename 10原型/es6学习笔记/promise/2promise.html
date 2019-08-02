@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var pro=new Promise(function(resolve,reject){
+            if(true){
+                resolve()
+            }else{
+                reject()
+            }
+        })
+        pro.then(requestA)
+            .then(requestB)
+            .then(requestC)
+            .catch(requestErr)
+        function requestA(){
+            console.log('请求A成功！')
+            return '请求B,下一个就是你了！'
+        }
+        function requestB(res){
+            console.log('上一步的结果是:'+res);
+            console.log('请求B成功！')
+            return '请求C下一个就是你了！'
+        }
+        function requestC(res){
+            console.log('上一步的结果是:'+res)
+            console.log('请求C成功!')
+        }
+        function requestErr(){
+            console.log('请求失败！')
+        }
+
+
+
+        // 请求A成功！
+        // 上一步的结果是:请求B,下一个就是你了！
+        // 请求B成功！
+        // 上一步的结果是:请求C下一个就是你了！
+        // 请求C成功!
+    </script>
+</body>
+</html>

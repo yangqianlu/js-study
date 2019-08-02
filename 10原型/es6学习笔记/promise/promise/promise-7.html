@@ -1,0 +1,32 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>Promise.race()它参数中的promise实例，
+		只要有一个状态发生变化（不管是成功fulfilled还是异常rejected），
+		它就会有返回，其他实例中再发生变化，它也不管了。</title> 
+</head>
+<body>
+<script type="text/javascript">
+
+//race
+
+Promise.race([new Promise(function (resolve,reject){
+	setTimeout(resolve,500,'one');
+}),new Promise(function (resolve,reject){
+	setTimeout(resolve,500,'two');
+
+}),new Promise(function (resolve,reject){
+	setTimeout(reject,300,'three');
+
+})]).then(function(l){
+	console.log(l)
+}).catch(function(l){
+	console.log(l)
+})
+
+
+
+</script>
+</body>
+</html>

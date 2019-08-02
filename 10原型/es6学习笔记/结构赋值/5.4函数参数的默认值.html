@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //传统的参数默认值的实现方式是，先判断该参数是否为undefined，如果是代表没传，需要手动给它赋一个值，如：
+
+        function demo(a){
+        var name;
+        if(a === undefined){//判断参数书否是否传值
+            name= "张三"; //没传，赋默认值
+        }else{
+                name= a;
+        }
+            console.log(name);
+        }
+        demo()//张三
+
+        //解构
+        function demo1({a="张三"}){
+          
+            console.log(a)
+        }
+        demo1({})//张三
+
+
+       function log(x,y='world') {
+         console.log(x,y)
+       }
+       log('hello','china') //hello china
+        log('hello')//hello world
+        log('hello','')//hello
+    </script>
+</body>
+</html>

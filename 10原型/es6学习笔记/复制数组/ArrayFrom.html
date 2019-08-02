@@ -9,10 +9,23 @@
 </head>
 <body>
 <script>
-    var arr=[{name:'杨前露',age:18},{name:'ping',age:20}]
-    var stringArr=JSON.stringify(arr)
-   document.write( JSON.stringify(arr)) //'[{name:\'杨前露\',age:18},{name:\'Hugh\',age:20}]'
-    console.log(Object.prototype.toString.call(JSON.parse(stringArr)) ) //[object Array]
+    //第一种方式 Array.from
+   // var arr=[1,2,3,4,5];
+   // var arr2=Array.from(arr);
+   // arr2.pop()
+   // console.log(arr)
+   // console.log(arr2)
+
+    //第二种方式 ...
+    var arr=[1,2,3,4,5];
+    var arr2=[...arr];
+    arr2.pop();
+    console.log(arr);
+    console.log(arr2);
+
+
+
+
 </script>
 </body>
 </html>

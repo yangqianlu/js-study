@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object.keys()，该方法返回一个数组</title>
+</head>
+<body>
+<script>
+    //传入对象， 返回 包含对象可枚举属性和方法的数组
+    var obj = {'a': 'Beijing', 'b': 'Haidian'};
+    console.log(Object.keys(obj));    //['a', 'b']
+    Object.keys(obj).forEach(key=>{
+        console.log(key) //a b
+    })
+    //传入字符串，返回索引值
+    var str = "Beijing";
+    console.log(Object.keys(str)); // ["0", "1", "2", "3", "4", "5", "6"]
+
+    //传入数组，返回索引值
+    var arr = ["a", "b", "c"];
+    console.log(Object.keys(arr));//["0", "1", "2"]
+
+</script>
+</body>
+</html>

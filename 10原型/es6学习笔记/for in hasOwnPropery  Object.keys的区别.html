@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var parent = Object.create(Object.prototype, {
+        a: {
+            value: 1,
+            writable: true,
+            enumerable: true,
+            configurable: true
+        }
+    });
+    var child = Object.create(parent, {
+        b: {
+            value: 2,
+            writable: true,
+            enumerable: true,
+            configurable: true
+        },
+        c: {
+            value: 3,
+            writable: true,
+            enumerable: false,
+            configurable: true
+        }
+    });
+    for (var key in child) {
+        //console.log(key) //b a
+        if (child.hasOwnProperty(key)) { //如果仅想输出自身的属性可以借助 hasOwnProperty。可以过滤掉原型链上的属性。
+            //console.log(key);//b
+        }
+    }
+    console.log(Object.keys(child)); //['b']
+    console.log(Object.getOwnPropertyNames(child));//["b", "c"]
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //["1", "2", "3",'12'].map(parseInt) 运行结果是什么  为什么？
+
+    // 原因：主要是下面这3点
+    // 1. map函数传递参数的定义
+    // 2. parseInt函数针对于radix这个参数的理解
+    // 3. 二进制当中没有"3"这个数码
+    //因为parseInt只接收2个参数，因此map的callback函数就只传递(item, index)这两个值给parseInt。
+    console.log(parseInt('1',0))//0进制 相当于10进制  返回1
+    console.log(parseInt('2',1))//1进制里面没有2  返回NaN
+    console.log(parseInt('3',2)) //2进制里面没有3 返回NaN
+    console.log(parseInt('12',3)) //将'12'看作3进制数，返回十进制数1*3^1+2*3^0=5
+</script>
+</body>
+</html>

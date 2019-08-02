@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        1.对象的解构赋值不会受到属性的排列次序影响（数组则会受影响），
+        它是跟属性名关联起来的，变量名要和属性名一致，才会成功赋值。
+        2、可以指定默认值
+    </title>
+</head>
+<body>
+    <script>
+
+        // var {a,b,c}={'a':1,'b':2,'c':3}
+        // console.log(a)//1
+        // console.log(b)//2
+        // console.log(c)//3
+        //
+        //
+        //
+        // var {d,b=3} = {"d":4};
+        // console.log(d)//4
+        // console.log(b)//3
+
+
+        const node = {loc: {start: {line: 1, column: 5}}};
+let {loc,loc:{start},loc:{start:{line,column}}}=node
+
+        console.log(loc) //{start: {line: 1, column: 5}}
+        console.log(start)//{line: 1, column: 5}
+        console.log(line) //1
+        console.log(column)//5
+    </script>
+</body>
+</html>

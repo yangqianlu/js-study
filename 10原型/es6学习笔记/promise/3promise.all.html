@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Promise.all( )方法：接受一个数组作为参数，数组的元素是Promise实例对象，
+        当参数中的实例对象的状态都为fulfilled时，Promise.all( )才会有返回。
+    </title>
+</head>
+<body>
+    <script>
+        var pro1=new Promise(function(resolve,reject){
+            setTimeout(function(){
+                resolve('实例1请求成功')
+            },5000)
+        })
+
+        var pro2=new Promise(function(resolve,reject){
+            setTimeout(function(){
+                resolve('实例2请求成功')
+            },1000)
+        })
+
+        Promise.all([pro1,pro2]).then(function(result){
+            console.log(result)//5秒后才会打印出结果  ["实例1请求成功","实例2请求成功"]
+        })
+    </script>
+</body>
+</html>

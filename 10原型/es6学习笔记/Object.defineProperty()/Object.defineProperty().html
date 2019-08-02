@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用object.defineProperty()方法监听属性变化</title>
+</head>
+<body>
+<script>
+    var obj = {};
+    var value=222;
+    Object.defineProperty(obj,'name',{
+        get: function () {
+            console.log('get it');
+            return value;//必须return一个值，作为name属性的值
+        },
+        set: function (newvalue) {
+            console.log('set it');
+            value = newvalue;//同步把value的值进行更新
+        }
+    });
+    console.log(obj);
+    console.log(obj.name);//222
+     obj.name = 1234;
+     console.log(obj.name);//1234
+</script>
+</body>
+</html>
